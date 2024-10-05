@@ -11,6 +11,10 @@ body {
     flex-direction: column;
 }
 
+main {
+    flex: 1;
+}
+
 h1, h2 {
     margin: 0;
 }
