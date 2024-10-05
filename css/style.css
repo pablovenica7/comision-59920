@@ -24,6 +24,11 @@ h2 {
 }
 
 /* Header */
+.logo-link {
+    color: #fff;
+    text-decoration: none;
+}
+
 header {
     padding: 10px;
     display: flex;
@@ -58,7 +63,9 @@ nav ul li a:hover {
     display: flex;
     justify-content: center; 
     align-items: center; 
+    padding: 15px;
     min-height: calc(100vh - 140px);
+    gap: 20px;
 }
 
 .img-inicio {
@@ -78,7 +85,7 @@ nav ul li a:hover {
 .historia-main {
     display: flex;
     gap: 80px;
-    margin: 50px auto;
+    margin: 35px auto;
     max-width: 1000px;
 }
 
@@ -110,35 +117,41 @@ nav ul li a:hover {
     display: flex;
     flex-direction: column;
     height: 450px;
+    align-items: center;
 }
 
 .img-producto {
+    width: 350px;
     height: 350px;
     object-fit: cover;
     border-radius: 20px;
+    transition: transform 0.3s ease;
 }
 
-/* Definir áreas específicas para cada producto */
+.img-producto:hover {
+    transform: scale(1.1);
+}
+
 .producto:nth-child(1) {
-    grid-area: remera; /* Ubica la remera en la parte superior izquierda */
+    grid-area: remera;
 }
 
 .producto:nth-child(2) {
-    grid-area: buzo; /* Ubica el buzo en la parte inferior izquierda */
+    grid-area: buzo;
 }
 
 .producto:nth-child(3) {
-    grid-area: zapatilla; /* Ubica la zapatilla en el centro */
-    justify-self: center; /* Asegura que esté centrada horizontalmente */
-    align-self: center; /* Asegura que esté centrada verticalmente */
+    grid-area: zapatilla;
+    justify-self: center;
+    align-self: center;
 }
 
 .producto:nth-child(4) {
-    grid-area: campera; /* Ubica la campera en la parte inferior derecha */
+    grid-area: campera;
 }
 
 .producto:nth-child(5) {
-    grid-area: pantalon; /* Ubica el pantalón en la parte superior derecha */
+    grid-area: pantalon;
 }
 
 .producto-texto {
@@ -150,10 +163,10 @@ nav ul li a:hover {
 .staff-main {
     display: flex;
     gap: 100px;
-    padding: 20px;
+    padding: 35px;
 }
 
-.staff-member {
+.staff-miembro {
     text-align: center;
 }
 
@@ -163,15 +176,87 @@ nav ul li a:hover {
     border-radius: 20px;
     object-fit: cover;
     border: 2px solid #333;
+    transition: transform 0.3s ease;
 }
 
-.staff-role, .staff-name {
+.img-staff:hover {
+    transform: scale(1.1);
+}
+
+.staff-rol, .staff-nombre {
     font-size: 1.2rem;
     margin: 5px 0;
 }
 
-.staff-role {
+.staff-rol {
     font-weight: bold;
+}
+
+/* Contenido principal para la página de Contacto*/
+main section {
+    display: flex;
+    align-items: center;
+    padding: 45px;
+    gap: 150px;
+}
+
+main section p.contacto {
+    flex-basis: 45%;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 1.6;
+}
+
+.contact-form {
+    flex-basis: 45%;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border: 2px solid #333;
+    border-radius: 20px;
+}
+
+.contact-form label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #0077cc;
+    box-shadow: 0px 0px 5px rgba(0, 119, 204, 0.3);
+    outline: none;
+}
+
+.contact-form button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    background-color: #0077cc;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #005fa3;
+    transform: translateY(-3px);
+    box-shadow: 0px 4px 10px rgba(0, 95, 163, 0.2);
 }
 
 /* Footer */
@@ -195,5 +280,207 @@ footer .footer-content p {
 footer .footer-content .icons img {
     width: 70px;
     height: 60px;
-    margin: 0 10px;
+    margin: 0 15px;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.footer-content .icons img:hover {
+    filter: grayscale(0%);
+}
+
+/* Adaptación para tablet*/
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    nav ul li a {
+        font-size: 1.3rem;
+    }
+
+    .index-main {
+        flex-direction: column;
+    }
+
+    .img-inicio {
+        width: 300px;
+        height: 300px;
+    }
+
+    .frase {
+        font-size: 1.2rem;
+    }
+
+    .historia-main {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .img-historia {
+        width: 300px;
+        height: 400px;
+    }
+
+    .productos-main {
+        grid-template-areas:
+            "remera"
+            "zapatilla"
+            "pantalon"
+            "buzo"
+            "campera";
+    }
+
+    .staff-main {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    main section {
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    main section p.contacto {
+        flex-basis: 100%;
+        text-align: left;
+        font-size: 1.3rem;
+    }
+
+    .contact-form {
+        flex-basis: 100%;
+        margin-top: 20px;
+    }
+
+    footer .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    footer .footer-content p {
+        font-size: 1.3rem;
+    }
+
+    footer .footer-content .icons img {
+        width: 50px;
+        height: 40px;
+    }
+}
+
+/* Adaptación para celular*/
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 1.25rem;
+    }
+
+    .index-main {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .img-inicio {
+        width: 250px;
+        height: 250px;
+    }
+
+    .frase {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    .historia-main {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .img-historia {
+        width: 250px;
+        height: 350px;
+    }
+
+    .productos-main {
+        grid-template-areas:
+            "remera"
+            "zapatilla"
+            "pantalon"
+            "buzo"
+            "campera";
+    }
+
+    .producto {
+        height: auto;
+        padding: 10px;
+    }
+
+    .img-producto {
+        width: 100%;
+        height: auto;
+    }
+
+    .staff-main {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .img-staff {
+        width: 250px;
+        height: 300px;
+    }
+
+    main section {
+        padding: 20px;
+    }
+
+    main section p.contacto {
+        font-size: 1.2rem;
+    }
+
+    .contact-form {
+        padding: 20px;
+    }
+
+    .contact-form label {
+        font-size: 1rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.9rem;
+    }
+
+    .contact-form button {
+        font-size: 1rem;
+    }
+
+    footer .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer .footer-content .icons img {
+        width: 50px;
+        height: 40px;
+    }
 }
