@@ -308,7 +308,7 @@ footer {
   }
 }
 
-// Mobile
+// Celular
 @media (max-width: 768px) {
   @include responsive-font(h1, 2rem);
   @include responsive-font(h2, 1.75rem);
